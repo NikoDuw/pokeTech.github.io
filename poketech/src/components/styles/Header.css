@@ -1,0 +1,14 @@
+.header-container{
+    background-color: #6BB591;
+    text-align: center;
+    padding: 0;
+    height: fit-content;
+}
+
+.title{
+    padding: .3em;
+}
+
+.second-title{
+    padding: 10pt;
+}

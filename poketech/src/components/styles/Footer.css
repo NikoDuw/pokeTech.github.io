@@ -1,0 +1,11 @@
+.container-footer{
+    background-color: #6BAFB5;
+    height: 84px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.by{
+    font-size:2rem;
+}
