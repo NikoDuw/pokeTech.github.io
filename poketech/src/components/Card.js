@@ -2,6 +2,7 @@ import React from 'react';
 import "./styles/Card.css";
 
 class Card extends React.Component{
+    state ={viewAbilities: false}
     render(){
         return(
             <div className="container-card">
@@ -10,7 +11,7 @@ class Card extends React.Component{
                     <div className="img-card"></div>
                     <div className="container-align">
                         <div className="name-card">
-                            <p>NombrePokemon</p>
+                            <p>{this.props.pokemon.nombre}</p>
                         </div>
                     </div>
                     
@@ -21,10 +22,16 @@ class Card extends React.Component{
                 </div>
 
                 <div className="container-button">
-                    <a className="habilities"> Ver Habilidades</a>
+                    <a className="habilities" onClick={e => {this.setState({viewAbilities: !this.state.viewAbilities})}}> {this.state.viewAbilities ? "Ocultar":"Ver"} </a>
                 </div>
 
-
+                <div className="container-abilities">
+                    { this.state.viewAbilities &&
+                    <ul> 
+                        {this.props.pokemon.habilidades.map(ability => <li>{ability}</li>)}
+                    </ul>
+                    }
+                </div>
             </div>
         )
     }
