@@ -8,7 +8,9 @@ class Card extends React.Component{
             <div className="container-card">
 
                 <div className="container-img-name">
-                    <div className="img-card"></div>
+                    <div className="img-card">
+                        <img className="img-poke" src={this.props.pokemon.url} alt="Bul" />
+                    </div>
                     <div className="container-align">
                         <div className="name-card">
                             <p>{this.props.pokemon.nombre}</p>
@@ -22,7 +24,7 @@ class Card extends React.Component{
                 </div>
 
                 <div className="container-button">
-                    <a className="habilities" onClick={e => {this.setState({viewAbilities: !this.state.viewAbilities})}}> {this.state.viewAbilities ? "Ocultar":"Ver"} </a>
+                    <a className="habilities" onClick={e => {this.setState({viewAbilities: !this.state.viewAbilities})}}> {this.state.viewAbilities ? "Ocultar habilidades":"Ver habilidades"} </a>
                 </div>
 
                 <div className="container-abilities">
