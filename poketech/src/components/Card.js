@@ -24,7 +24,7 @@ class Card extends React.Component{
                 </div>
 
                 <div className="container-button">
-                    <a className="habilities" onClick={e => {this.setState({viewAbilities: !this.state.viewAbilities})}}> {this.state.viewAbilities ? "Ocultar habilidades":"Ver habilidades"} </a>
+                    <a href className="habilities" onClick={e => {this.setState({viewAbilities: !this.state.viewAbilities})}}> {this.state.viewAbilities ? "Ocultar habilidades":"Ver habilidades"} </a>
                 </div>
 
                 <div className="container-abilities">
