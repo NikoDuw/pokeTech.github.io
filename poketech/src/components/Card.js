@@ -30,7 +30,7 @@ class Card extends React.Component{
                 <div className="container-abilities">
                     { this.state.viewAbilities &&
                     <ul> 
-                        {this.props.pokemon.habilidades.map(ability => <li>{ability}</li>)}
+                        {this.props.pokemon.habilidades.map(ability => <li>{ability.ability.name}</li>)}
                     </ul>
                     }
                 </div>
