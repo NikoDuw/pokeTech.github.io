@@ -3,10 +3,17 @@
     height: 84px;
     margin-top: 50px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 
 .by{
-    font-size:2rem;
+    font-size:1.5rem;
     text-decoration: none;
+    color: black;
+    justify-content: center;
+}
+
+a{
+    color: black;
 }

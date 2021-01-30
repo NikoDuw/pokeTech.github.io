@@ -84,3 +84,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.container-abilities{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+    background-color: #65AB75;
+    color: white;
+}

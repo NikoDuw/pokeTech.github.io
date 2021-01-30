@@ -3,6 +3,12 @@ import "./styles/Card.css";
 
 class Card extends React.Component{
     state ={viewAbilities: false}
+    handleOnClick (){
+        this.setState({viewAbilities: !this.state.viewAbilities})
+        if (this.props.pokemon.habilidades.length === 0){
+            this.props.callback(this.props.pokemon.nombre)
+        }
+    }
     render(){
         return(
             <div className="container-card">
@@ -24,7 +30,7 @@ class Card extends React.Component{
                 </div>
 
                 <div className="container-button">
-                    <a href className="habilities" onClick={e => {this.setState({viewAbilities: !this.state.viewAbilities})}}> {this.state.viewAbilities ? "Ocultar habilidades":"Ver habilidades"} </a>
+                    <a href className="habilities" onClick={this.handleOnClick.bind(this)}> {this.state.viewAbilities ? "Ocultar habilidades":"Ver habilidades"} </a>
                 </div>
 
                 <div className="container-abilities">

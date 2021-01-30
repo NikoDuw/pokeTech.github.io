@@ -5,7 +5,7 @@ import Card from "./Card";
 class CardList extends React.Component{
     render(){
         return(
-            this.props.cards.map(card => <Card pokemon={card}/>)
+            this.props.cards.map(card => <Card pokemon={card} callback={this.props.callback} />)
         )
     }
 }

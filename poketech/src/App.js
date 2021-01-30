@@ -17,7 +17,10 @@ class App extends React.Component {
                     {nombre: "NIDORINA", habilidades: [], url: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/028.png"},
                     ]}
   
-  updatePokeList(nombre, habilidades){
+async updatePokeList(nombre){
+    const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre.toLowerCase()}`)
+        const data = await request.json()
+        const habilidades = data.abilities
     const newPokeList = this.state.pokeList.map(pokemon => {
       if(pokemon.nombre === nombre){
         return {...pokemon,habilidades}
@@ -26,22 +29,16 @@ class App extends React.Component {
     })
     this.setState({pokeList: newPokeList})
   }
-  
-  getHabilidad = async (nombre) => { 
-    const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre}`)
-        const data = await request.json()
-    return data.abilities
-  }
+
 async componentDidMount(){
-    const abilities = await this.getHabilidad("SPEAROW".toLowerCase())
-    this.updatePokeList("SPEAROW",abilities)
+    this.updatePokeList("PIKACHU")
   }
   render(){
   return (
     <div className="App">
       <Header/>
       <div className="container-cards">
-        <CardList cards={this.state.pokeList}/>
+        <CardList cards={this.state.pokeList} callback={this.updatePokeList.bind(this)}/>
        </div>
       <Footer/>
     </div>
@@ -50,19 +47,3 @@ async componentDidMount(){
 }
 
 export default App;
-
-
-
-// const getHabilidadAsync = async () => {
-//   try{
-
-//     const resPost = await fetch('https://pokeapi.co/api/v2/pokemon/')
-
-//     const post = await resPost.json()
-
-//   } catch (error) {
-
-//   }
-// }
-
-// getHabilidadAsync()
