@@ -19,19 +19,19 @@ class App extends React.Component {
   
 async updatePokeList(nombre){
     const request = await fetch(`https://pokeapi.co/api/v2/pokemon/${nombre.toLowerCase()}`)
-        const data = await request.json()
-        const habilidades = data.abilities
+    const data = await request.json()
+    const habilidades = data.abilities
     const newPokeList = this.state.pokeList.map(pokemon => {
-      if(pokemon.nombre === nombre){
-        return {...pokemon,habilidades}
+      if(pokemon.nombre === nombre){ // si el nombre del pokemon es el que estoy buscando
+        return {...pokemon,habilidades} // retorno el pokemon con las habilidades
       }
-      return pokemon
+      return pokemon // sino retorneme el mismo pokemon
     })
-    this.setState({pokeList: newPokeList})
+    this.setState({pokeList: newPokeList}) // nuevo estado es un objeto del pokeomon
   }
 
 async componentDidMount(){
-    this.updatePokeList("PIKACHU")
+    this.updatePokeList("")
   }
   render(){
   return (
