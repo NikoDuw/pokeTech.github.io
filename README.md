@@ -1,2 +1,2 @@
-# pokeTech2nv
+# pokeTech
 
